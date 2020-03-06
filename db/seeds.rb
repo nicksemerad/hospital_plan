@@ -3,13 +3,15 @@
    name: Faker::TvShows::StarTrek.specie
 )
   patient = Patient.create(
-    Faker::TvShows::RickAndMorty.character
+    name: Faker::TvShows::RickAndMorty.character
 )
 
   3.times do
     appointment = Appointment.create(
-      first_name: Faker::TvShows::RickAndMorty.character,
-      last_name: Faker::TvShows::StarTrek.specie
+      location: Faker::TvShows::GameOfThrones.city,
+      time: Faker::Date.forward(days: 50),
+      doctor_id: doctor.id,
+      patient_id: patient.id
     )
   end
 end
